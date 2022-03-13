@@ -1,9 +1,11 @@
 # Personal Spotify Wrapped
-
-
 ![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/login.png)
 ![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home1.png)
 ![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home2.png)
+
+## Requirements
+### Spotify Wrapped App
+### Spotify Wrapped Server
 
 ## Available Scripts
 
