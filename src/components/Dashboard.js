@@ -4,6 +4,8 @@ import classes from "./Dashboard.module.css";
 import SpotifyWebApi from "spotify-web-api-node";
 import ArtistItem from "./ArtistItem";
 import UserCard from "./UserCard";
+import Switch from "./Switch";
+import TrackItem from "./TrackItem";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "dd073909aeb9469599413918e7095297",
@@ -11,18 +13,32 @@ const spotifyApi = new SpotifyWebApi({
 
 export default function Dashboard(props) {
   const [topArtists, setTopArtists] = useState([]);
+  const [topTracks, setTopTracks] = useState([]);
   const [userInfo, setUserInfo] = useState({});
   const [shortClass, setShortClass] = useState(true);
   const [midClass, setMidClass] = useState(false);
   const [longClass, setLongClass] = useState(false);
+  const [renderTracks, setRenderTracks] = useState(false);
   const accessToken = useAuth(props.code);
 
   const customClass = `${classes.option} ${classes.active}`;
 
+  const artistsHandler = () => {
+    setRenderTracks(false);
+  };
+
+  const tracksHandler = () => {
+    setRenderTracks(true);
+  };
+
   const shortTerm = (event) => {
-    spotifyApi.getMyTopArtists({ time_range: "short_term" }).then((res) => {
-      setTopArtists(res.body.items);
-    });
+      spotifyApi.getMyTopArtists({ time_range: "short_term" }).then((res) => {
+        setTopArtists(res.body.items);
+      });
+      spotifyApi.getMyTopTracks({ time_range: "short_term" }).then((res) => {
+        console.log(res.body.items);
+        setTopTracks(res.body.items);
+      });
     setShortClass(true);
     setMidClass(false);
     setLongClass(false);
@@ -32,6 +48,9 @@ export default function Dashboard(props) {
     spotifyApi.getMyTopArtists({ time_range: "medium_term" }).then((res) => {
       setTopArtists(res.body.items);
     });
+    spotifyApi.getMyTopTracks({ time_range: "medium_term" }).then((res) => {
+      setTopTracks(res.body.items);
+    });
     setShortClass(false);
     setMidClass(true);
     setLongClass(false);
@@ -40,6 +59,9 @@ export default function Dashboard(props) {
   const longTerm = (event) => {
     spotifyApi.getMyTopArtists({ time_range: "long_term" }).then((res) => {
       setTopArtists(res.body.items);
+    });
+    spotifyApi.getMyTopTracks({ time_range: "long_term" }).then((res) => {
+      setTopTracks(res.body.items);
     });
     setShortClass(false);
     setMidClass(false);
@@ -68,8 +90,8 @@ export default function Dashboard(props) {
       spotifyApi.getFollowedArtists({ limit: 1 }).then((res) => {
         new_user = {
           ...new_user,
-          totalArtists: res.body.artists.total
-        }
+          totalArtists: res.body.artists.total,
+        };
         setUserInfo(new_user);
       });
     });
@@ -83,6 +105,7 @@ export default function Dashboard(props) {
         avatar={userInfo.avatar}
         totalArtists={userInfo.totalArtists}
       />
+      <Switch artistsHandler={artistsHandler} tracksHandler={tracksHandler} />
       <div className={classes.card}>
         <div className={classes.header}>
           <div
@@ -105,16 +128,31 @@ export default function Dashboard(props) {
           </div>
         </div>
         <div className={classes.list}>
-          <ul>
-            {topArtists.map((artist) => (
-              <ArtistItem
-                key={artist.id}
-                name={artist.name}
-                src={artist.images[0].url}
-                genre={artist.genres[0]}
-              />
-            ))}
-          </ul>
+          {!renderTracks ? (
+            <ul>
+              {topArtists.map((artist) => (
+                <ArtistItem
+                  key={artist.id}
+                  name={artist.name}
+                  src={artist.images[0].url}
+                  genre={artist.genres[0]}
+                />
+              ))}
+            </ul>
+          ) : (
+            <ul>
+              {topTracks.map((track) => (
+                <TrackItem 
+                key={track.id}
+                name={track.name}
+                album={track.album.name}
+                artist={track.album.artists[0].name}
+                explicit={track.explicit}
+                image={track.album.images[0].url}
+                />
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

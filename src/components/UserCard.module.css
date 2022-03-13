@@ -1,7 +1,77 @@
-@media only screen and (max-width: 660px) {
+@media only screen and (min-width: 100px) and (max-width:350px) {
+  .card {
+    box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    z-index: 1;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding: 14px;
+  }
+
+  .header h1 {
+      font-size: .9em;
+  }
+
+  .avatar {
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+  }
+
+  .name {
+    color: #1db954;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 4px;
+    justify-content: space-evenly;
+  }
+
+  .followers {
+    display: flex;
+    flex-direction: column;
+    line-height: 3px;
+    align-items: center;
+  }
+
+  .followers h2 {
+    font-size: .7em;
+  }
+
+  .followers p {
+    font-size: 1.4em;
+  }
+
+  .copy{
+      color: rgba(95, 95, 95, 0.39);
+  }
+  
+}
+
+@media only screen and (min-width: 350px) and (max-width:660px) {
     .card {
       box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
-      width: 70%;
+      background-color: #fff;
+      width: 80%;
       margin: auto;
       margin-top: 100px;
       padding: 14px;
@@ -9,6 +79,7 @@
       flex-direction: column;
       align-items: center;
       border-radius: 15px;
+      z-index: 1;
     }
   
     .header {
@@ -58,12 +129,18 @@
     .followers p {
       font-size: 1.4em;
     }
+
+    .copy{
+        color: rgba(95, 95, 95, 0.39);
+    }
+    
   }
   
 
 @media only screen and (min-width: 660px) {
   .card {
     box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
     width: 65%;
     margin: auto;
     margin-top: 100px;
@@ -72,6 +149,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
+    z-index: 1;
   }
 
   .header {
@@ -115,6 +193,9 @@
 
   .followers p {
     font-size: 1.5em;
+  }
+  .copy{
+      color: rgba(95, 95, 95, 0.39);
   }
 }
 

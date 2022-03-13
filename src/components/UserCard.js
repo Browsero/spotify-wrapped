@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./UserCard.module.css";
 
 export default function UserCard(props) {
+  const year = new Date().getFullYear();
   return (
     <div className={classes.card}>
       <div className={classes.header}>
@@ -20,6 +21,7 @@ export default function UserCard(props) {
           <p>{props.totalArtists}</p>
         </div>
       </div>
+      <p className={classes.copy}>Hubert Madej &#169; {year}</p>
     </div>
   );
 }

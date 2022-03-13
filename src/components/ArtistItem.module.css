@@ -13,10 +13,11 @@
   transition: .3s ease;
 }
 .item-container:hover{
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(245, 245, 245);
 }
 .genre {
-  border: 1px black solid;
+  border: 1px rgb(141, 141, 141) solid;
+  color: rgb(141, 141, 141);
   border-radius: 5px;
   padding: 8px;
 }
