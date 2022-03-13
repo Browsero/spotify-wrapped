@@ -1,6 +1,70 @@
-.card{
+@media only screen and (max-width: 660px) {
+    .card {
+      box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+      width: 70%;
+      margin: auto;
+      margin-top: 100px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+    }
+  
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      border-bottom: 1px solid rgb(209, 209, 209);
+      padding: 14px;
+    }
+
+    .header h1 {
+        font-size: 1.2em;
+    }
+  
+    .avatar {
+      height: 64px;
+      width: 64px;
+      border-radius: 100%;
+    }
+  
+    .name {
+      color: #1db954;
+    }
+  
+    .content {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      padding: 4px;
+      justify-content: space-evenly;
+    }
+  
+    .followers {
+      display: flex;
+      flex-direction: column;
+      line-height: 3px;
+      align-items: center;
+    }
+  
+    .followers h2 {
+      font-size: .8em;
+    }
+  
+    .followers p {
+      font-size: 1.4em;
+    }
+  }
+  
+
+@media only screen and (min-width: 660px) {
+  .card {
     box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
-    width: 40%;
+    width: 65%;
     margin: auto;
     margin-top: 100px;
     padding: 14px;
@@ -8,9 +72,9 @@
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-}
+  }
 
-.header {
+  .header {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,37 +82,50 @@
     gap: 15px;
     width: 100%;
     border-bottom: 1px solid rgb(209, 209, 209);
-}
+  }
 
-.avatar {
+  .avatar {
     height: 64px;
     width: 64px;
     border-radius: 100%;
-}
+  }
 
-.name {
+  .name {
     color: #1db954;
-}
+  }
 
-.content {
+  .content {
     display: flex;
     width: 100%;
     flex-direction: row;
     padding: 4px;
     justify-content: space-evenly;
-}
+  }
 
-.followers {
+  .followers {
     display: flex;
     flex-direction: column;
     line-height: 3px;
     align-items: center;
-}
+  }
 
-.followers h2 {
+  .followers h2 {
     font-size: 1em;
+  }
+
+  .followers p {
+    font-size: 1.5em;
+  }
 }
 
-.followers p {
-    font-size: 1.5em;
+@media only screen and (min-width:992px){
+    .card{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    .card{
+        width: 40%;
+    }
 }
