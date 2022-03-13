@@ -1,0 +1,117 @@
+@media only screen and (max-width: 660px) {
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 25%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .login-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: .8em;
+  }
+
+  .name {
+    color: #1db954;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #1db954;
+    padding: 14px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    font-size: 1.3em;
+    text-align: center;
+  }
+  .button-container .btn {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+  }
+  .icon {
+    font-size: 1.3em;
+  }
+  .button-container:hover {
+    padding: 20px;
+    background-color: #191414;
+    color: #ffffff;
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 660px) {
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 25%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .login-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .name {
+    color: #1db954;
+  }
+  .button-container {
+    display: flex;
+    text-align: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #1db954;
+    padding: 14px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    font-size: 1.5em;
+  }
+  .button-container .btn {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+  }
+  .button-container:hover {
+    background-color: #191414;
+    color: #ffffff;
+    font-size: 1.6em;
+  }
+}

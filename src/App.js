@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import aos from "aos";
+import "aos/dist/aos.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const code = new URLSearchParams(window.location.search).get("code");
+
+export default function () {
+  useEffect(() => {
+    aos.init({ duration: 1000, once: true });
+  }, []);
+  return <>{code ? <Dashboard code={code} /> : <Login />}</>;
 }
-
-export default App;
