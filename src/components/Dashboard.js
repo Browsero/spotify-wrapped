@@ -58,19 +58,31 @@ export default function Dashboard(props) {
 
   useEffect(() => {
     if (!accessToken) return;
+    let new_user;
     spotifyApi.getMe().then((res) => {
-      console.log(res);
-      setUserInfo({
+      new_user = {
         name: res.body.display_name,
         followers: res.body.followers.total,
         avatar: res.body.images[0].url,
+      };
+      spotifyApi.getFollowedArtists({ limit: 1 }).then((res) => {
+        new_user = {
+          ...new_user,
+          totalArtists: res.body.artists.total
+        }
+        setUserInfo(new_user);
       });
     });
   }, [accessToken]);
 
   return (
     <div className={classes.container}>
-      <UserCard name={userInfo.name} followers={userInfo.followers} avatar={userInfo.avatar} />
+      <UserCard
+        name={userInfo.name}
+        followers={userInfo.followers}
+        avatar={userInfo.avatar}
+        totalArtists={userInfo.totalArtists}
+      />
       <div className={classes.card}>
         <div className={classes.header}>
           <div

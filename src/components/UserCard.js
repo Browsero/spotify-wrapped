@@ -12,8 +12,12 @@ export default function UserCard(props) {
       </div>
       <div className={classes.content}>
         <div className={classes.followers}>
-        <h2>Total Followers</h2>
-        <p>{props.followers}</p>
+          <h2>Total Followers</h2>
+          <p>{props.followers}</p>
+        </div>
+        <div className={classes.followers}>
+          <h2>Total Followed Artists</h2>
+          <p>{props.totalArtists}</p>
         </div>
       </div>
     </div>

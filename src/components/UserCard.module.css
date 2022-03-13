@@ -32,8 +32,10 @@
 
 .content {
     display: flex;
+    width: 100%;
     flex-direction: row;
     padding: 4px;
+    justify-content: space-evenly;
 }
 
 .followers {
@@ -41,6 +43,10 @@
     flex-direction: column;
     line-height: 3px;
     align-items: center;
+}
+
+.followers h2 {
+    font-size: 1em;
 }
 
 .followers p {
