@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/login.png)
+![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home1.png)
+![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home2.png)
 
 ## Available Scripts
 
