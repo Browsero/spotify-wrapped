@@ -1,0 +1,35 @@
+.item {
+  width: 100%;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  line-height: 7px;
+  gap: 15px;
+  width: 100%;
+  transition: .3s ease;
+}
+.item-container:hover{
+    background-color: rgb(218, 218, 218);
+}
+.genre {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.name{
+    font-weight: 600;
+}
+
+.image {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
+  margin-left: 50px;
+}
