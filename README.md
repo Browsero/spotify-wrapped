@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Personal Spotify Wrapped
+![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/login.png)
+#
+![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home1.png)
+#
+![alt text](https://github.com/Browsero/spotify-wrapped/blob/master/readmeImages/home2.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
+### Spotify Wrapped App
+### Spotify Wrapped Server
 
 ## Available Scripts
 
