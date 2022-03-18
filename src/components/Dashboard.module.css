@@ -103,6 +103,7 @@
 
 @media only screen and (min-width: 660px) {
   .container {
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 100%;

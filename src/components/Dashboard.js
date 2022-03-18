@@ -32,7 +32,7 @@ export default function Dashboard(props) {
   };
 
   const shortTerm = (event) => {
-      spotifyApi.getMyTopArtists({ time_range: "short_term" }).then((res) => {
+      spotifyApi.getMyTopArtists({ time_range: "short_term"}).then((res) => {
         setTopArtists(res.body.items);
       });
       spotifyApi.getMyTopTracks({ time_range: "short_term" }).then((res) => {
@@ -130,9 +130,10 @@ export default function Dashboard(props) {
         <div className={classes.list}>
           {!renderTracks ? (
             <ul>
-              {topArtists.map((artist) => (
+              {topArtists.map((artist, index) => (
                 <ArtistItem
                   key={artist.id}
+                  index = {index}
                   name={artist.name}
                   src={artist.images[0].url}
                   genre={artist.genres[0]}
@@ -141,9 +142,10 @@ export default function Dashboard(props) {
             </ul>
           ) : (
             <ul>
-              {topTracks.map((track) => (
+              {topTracks.map((track, index) => (
                 <TrackItem 
                 key={track.id}
+                index={index}
                 name={track.name}
                 album={track.album.name}
                 artist={track.album.artists[0].name}

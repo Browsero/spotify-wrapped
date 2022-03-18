@@ -1,5 +1,16 @@
 .item {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.id{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  color: #acacac;
+  transition: .3s ease;
 }
 
 .item-container {
@@ -12,8 +23,11 @@
   width: 100%;
   transition: .3s ease;
 }
-.item-container:hover{
+.item:hover{
     background-color: rgb(245, 245, 245);
+}
+.item:hover > .id {
+  margin-bottom: 12px;
 }
 .genre {
   border: 1px rgb(141, 141, 141) solid;
@@ -32,5 +46,4 @@
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 4px 6px 13px 8px rgba(0, 0, 0, 0.12);
-  margin-left: 50px;
 }
