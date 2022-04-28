@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Login.module.css";
 import { RiSpotifyLine } from "react-icons/ri";
-require('dotenv').config();
 
 const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "dd073909aeb9469599413918e7095297";
@@ -12,7 +11,7 @@ const scopes = [
   "streaming",
 ];
 
-const redirectUri = process.env.URL;
+const redirectUri = process.env.REACT_APP_BASE_URL;
 const AUTH_DATA = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=code&`;
