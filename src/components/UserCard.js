@@ -6,9 +6,9 @@ export default function UserCard(props) {
   return (
     <div className={classes.card}>
       <div className={classes.header}>
-        <img className={classes.avatar} alt="avatar" src={props.avatar} />
+        <img className={classes.avatar ? classes.avatar : process.env.PUBLIC_URL + "/avatar.jpg"} alt="avatar" src={props.avatar} />
         <h1>
-          Hello <span className={classes.name}>{props.name}</span> !
+          Hello <span className={classes.name}>{props.name ? props.name : "Secret Spy"}</span> !
         </h1>
       </div>
       <div className={classes.content}>
