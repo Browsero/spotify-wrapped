@@ -10,7 +10,7 @@ export default function ArtistItem(props) {
       <div className={classes["item-container"]}>
         <div className={classes.info}>
           <p className={classes.name}>{props.name}</p>
-          <p className={classes.genre}>{props.genre}</p>
+          {props.genre ? <p className={classes.genre}>{props.genre}</p> : <p className={classes.genre}>General</p>}
         </div>
         <img className={classes.image} alt={props.name} src={props.src} />
       </div>
