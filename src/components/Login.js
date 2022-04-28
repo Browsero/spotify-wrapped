@@ -10,7 +10,7 @@ const scopes = [
   "user-read-recently-played",
   "streaming",
 ];
-const redirectUri = "/";
+const redirectUri = "https://spotify-wrapped.vercel.app/";
 const AUTH_DATA = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=code&`;
